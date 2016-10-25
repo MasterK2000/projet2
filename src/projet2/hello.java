@@ -12,6 +12,7 @@ public class hello {
 				+ "y437rt7tr7trr");
 		
 		System.out.println("ALLO?AAAAAAAAAAAAAAAA");
+		System.out.println("Parfait sa marche");
 	}
 
 }
