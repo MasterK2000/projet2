@@ -11,6 +11,7 @@ public class hello {
 				+ "ru4y7rt43r737r43y47r"
 				+ "y437rt7tr7trr");
 		
+		System.out.println("ALLO?AAAAAAAAAAAAAAAA");
 	}
 
 }
