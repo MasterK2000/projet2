@@ -1,18 +1,27 @@
 package projet2;
 
-public class hello {
+public class identification extends JFrame{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("yoa in 2016");
-		System.out.println("::::»»»»»»»");
-		System.out.println("4thuuy7yy88u88y7y44t6rt"
-				+ "t67t4ry74y7ry47yr"
-				+ "ru4y7rt43r737r43y47r"
-				+ "y437rt7tr7trr");
+	JTextArea JTXTnumInscription,JTXTmotpasse;
+	JLabel JLBnum,JLBmdpasse;
+	JPanel panel1,panel2;
+	
+	identification(){
 		
-		System.out.println("ALLO?AAAAAAAAAAAAAAAA");
-		System.out.println("Parfait sa marche");
+		super("Authentification");
+		
+		
+		
+		
+		setSize(300,500);
+		setVisible(true);
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
 	}
 
 }
