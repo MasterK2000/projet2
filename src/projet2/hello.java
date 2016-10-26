@@ -2,7 +2,7 @@ package projet2;
 
 public class identification extends JFrame{
 
-	JTextArea JTXTnumInscription,JTXTmotpasse;
+	JTextField JTFnumInscription,JTFmotpasse;
 	JLabel JLBnum,JLBmdpasse;
 	JPanel panel1,panel2;
 	
@@ -10,18 +10,24 @@ public class identification extends JFrame{
 		
 		super("Authentification");
 		
+		JLBnum = new JLabel("Numero d'inscription : "); // ajouter accent a numero
+		JLBmdpasse = new JLabel("Mot de passe : ");
+		JTFnumInscription = new JTextField();
+		JTFmotpasse = new JTextField();
+		
 		
 		
 		
 		setSize(300,500);
 		setVisible(true);
-		
+		setRelativeLocation
 		
 	}
 	
 	
 	public static void main(String[] args) {
-		
+		identification identi = new identification();
+		identi.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
 }
