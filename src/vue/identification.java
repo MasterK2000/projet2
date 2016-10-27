@@ -1,5 +1,7 @@
 package vue;
 
+import java.awt.GridLayout;
+
 import javax.swing.*;
 
 public class identification extends JFrame{
@@ -12,18 +14,28 @@ public class identification extends JFrame{
 		
 		super("Authentification");
 		
-		JLBnum = new JLabel("Numero d'inscription : "); // ajouter accent a numero
+		JLBnum = new JLabel("Numero d'utilisateur : ");
 		JLBmdpasse = new JLabel("Mot de passe : ");
 		JTFnumInscription = new JTextField();
 		JTFmotpasse = new JTextField();
+		panel1 = new JPanel();
+		panel1.setLayout(new GridLayout(2,2));
+		JTFnumInscription.setColumns(10);
+		JTFmotpasse.setColumns(10);
 		
 		
+		setLayout(null);
+		panel1.add(JLBnum);
+		panel1.add(JTFnumInscription);
+		panel1.add(JLBmdpasse);
+		panel1.add(JTFmotpasse);
 		
-		
-		setSize(300,500);
+		panel1.setBounds(20, 20, 300, 60);
+		add(panel1);
+		setSize(350,200);
 		setVisible(true);
 		setLocationRelativeTo(null);
-		
+		setResizable(false);
 	}
 	
 	
