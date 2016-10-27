@@ -1,4 +1,6 @@
-package projet2;
+package vue;
+
+import javax.swing.*;
 
 public class identification extends JFrame{
 
@@ -20,7 +22,7 @@ public class identification extends JFrame{
 		
 		setSize(300,500);
 		setVisible(true);
-		setRelativeLocation
+		setLocationRelativeTo(null);
 		
 	}
 	
