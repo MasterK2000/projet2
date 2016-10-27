@@ -9,6 +9,8 @@ public class identification extends JFrame{
 	JTextField JTFnumInscription,JTFmotpasse;
 	JLabel JLBnum,JLBmdpasse;
 	JPanel panel1,panel2;
+	JButton connex,effacer;
+	JCheckBox souvenir;
 	
 	identification(){
 		
@@ -19,6 +21,7 @@ public class identification extends JFrame{
 		JTFnumInscription = new JTextField();
 		JTFmotpasse = new JTextField();
 		panel1 = new JPanel();
+		connex = new JButton("Connexion");
 		panel1.setLayout(new GridLayout(2,2));
 		JTFnumInscription.setColumns(10);
 		JTFmotpasse.setColumns(10);
