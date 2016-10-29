@@ -24,7 +24,6 @@ public class GestionLogin implements ActionListener, MouseListener{
 	}
 
 
-
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		Object o = arg0.getSource();
