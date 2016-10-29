@@ -1,11 +1,7 @@
 package vue;
 
-import java.awt.BorderLayout;
-import java.awt.Graphics;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.*;
+import javax.swing.*;
 
 public class FenetrePrincipal extends JFrame{
 
@@ -32,6 +28,5 @@ public class FenetrePrincipal extends JFrame{
 	public void paintComponent(Graphics g){
 		super.paintComponents(g);
 		
-		//g.drawImage("bois planche.jpg", 0, 0, this);
 	}
 }
