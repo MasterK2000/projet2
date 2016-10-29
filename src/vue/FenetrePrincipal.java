@@ -25,6 +25,7 @@ public class FenetrePrincipal extends JFrame{
 		
 		
 		
+		
 		setResizable(false);
 	}
 	
