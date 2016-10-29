@@ -11,6 +11,7 @@ public final class identification extends JFrame{
 	JTextField JTFnumInscription;
 	JPasswordField JPFmotpasse;
 	JLabel JLBnum,JLBmdpasse,JLBsouvenir;
+	JPanel panel;
 	JButton connex;
 	JCheckBox JCBsouvenir;
 	GridBagConstraints gbl = new GridBagConstraints();
@@ -29,8 +30,9 @@ public final class identification extends JFrame{
 		JPFmotpasse = new JPasswordField("Mot de passe");
 		connex = new JButton("Connexion");
 		JCBsouvenir = new JCheckBox();
-		setLayout(new GridBagLayout());
-		
+		setLayout(new BorderLayout());
+		panel = new JPanel();
+		panel.setLayout(new GridBagLayout());
 		JLBnum.setIcon(new ImageIcon("usericon.png"));
 		JLBmdpasse.setIcon(new ImageIcon("password-icon.png"));
 		
@@ -46,37 +48,37 @@ public final class identification extends JFrame{
 		gbl.gridx = 0;
 		gbl.gridy = 0;
 		gbl.insets = new Insets(9,0,0,0);
-		add(JLBnum,gbl);
+		panel.add(JLBnum,gbl);
 		
 		gbl.insets = new Insets(0,0,0,0);
 		gbl.gridx = 0;
 		gbl.gridy = 1;
-		add(JLBmdpasse,gbl);
+		panel.add(JLBmdpasse,gbl);
 		
 		gbl.insets = new Insets(9,0,0,0);
 		gbl.gridwidth = 1;
 		gbl.ipady = 16;
 		gbl.gridx = 1;
 		gbl.gridy = 0;
-		add(JTFnumInscription,gbl);
+		panel.add(JTFnumInscription,gbl);
 		
 		gbl.insets = new Insets(0,0,0,0);
 		gbl.anchor = GridBagConstraints.CENTER;
 		gbl.gridwidth = 1;
 		gbl.gridx = 1;
 		gbl.gridy = 1;
-		add(JPFmotpasse,gbl);
+		panel.add(JPFmotpasse,gbl);
 		
 		gbl.gridx = 0;
 		gbl.gridy = 2;
 		gbl.ipady = 7;
 		gbl.gridwidth =1;
 		gbl.insets = new Insets(0,23,5,0);
-		add(JCBsouvenir, gbl);
+		panel.add(JCBsouvenir, gbl);
 		
 		gbl.gridx = 1;
 		gbl.insets = new Insets(0,0,5,63);
-		add(JLBsouvenir,gbl);
+		panel.add(JLBsouvenir,gbl);
 		
 		gbl.ipady=0;
 		gbl.gridx = 1;
@@ -84,17 +86,19 @@ public final class identification extends JFrame{
 		gbl.gridwidth =1;
 		gbl.ipady = 3;
 		gbl.anchor = GridBagConstraints.PAGE_END;
-		gbl.insets = new Insets(0,100,8,0);
-		add(connex,gbl);
+		gbl.insets = new Insets(0,90,8,0);
+		panel.add(connex,gbl);
+		
 		GestionLogin g = new GestionLogin(JTFnumInscription, JPFmotpasse, connex, JCBsouvenir);
 		JTFnumInscription.addMouseListener(g);
 		JPFmotpasse.addMouseListener(g);
 		connex.addActionListener(g);
 		JCBsouvenir.addActionListener(g);
 		
+		add(panel,BorderLayout.CENTER);
 		JTFnumInscription.setColumns(14);
 		JPFmotpasse.setColumns(14);
-		setSize(270,180);
+		setSize(290,190);
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setResizable(false);
