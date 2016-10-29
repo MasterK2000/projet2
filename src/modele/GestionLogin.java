@@ -53,6 +53,27 @@ public class GestionLogin implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
+		gestionlogin(arg0);
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		gestionlogin(arg0);
+	}
+	
+	public void gestionlogin(MouseEvent arg0){
 		Object o = arg0.getSource();
 
 		if(o == JTFnum && (JTFnum.getText().equals("Nom d'utilisateur") || JTFnum.getText().equals(""))){
@@ -72,23 +93,5 @@ public class GestionLogin implements ActionListener, MouseListener{
 			JTFnum.setForeground(Color.lightGray);
 		}
 	}
-
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-
-	}
-
 
 }
