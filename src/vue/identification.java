@@ -92,8 +92,8 @@ public final class identification extends JFrame{
 		connex.addActionListener(g);
 		JCBsouvenir.addActionListener(g);
 		
-		JTFnumInscription.setColumns(15);
-		JPFmotpasse.setColumns(15);
+		JTFnumInscription.setColumns(14);
+		JPFmotpasse.setColumns(14);
 		setSize(270,180);
 		setVisible(true);
 		setLocationRelativeTo(null);
