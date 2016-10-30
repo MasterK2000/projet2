@@ -12,6 +12,7 @@ public class FenetrePrincipal extends JFrame{
 		// TODO Auto-generated method stub
 		FenetrePrincipal fp = new FenetrePrincipal("préposé");
 		//FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
+		//nbghjgfdftgydyrtd
 	}
 	
 	public FenetrePrincipal(String strTypeUtilsateur){
