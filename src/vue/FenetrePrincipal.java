@@ -10,8 +10,8 @@ public class FenetrePrincipal extends JFrame{
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//FenetrePrincipal fp = new FenetrePrincipal("préposé");
-		FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
+		FenetrePrincipal fp = new FenetrePrincipal("préposé");
+		//FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
 	}
 	
 	public FenetrePrincipal(String strTypeUtilsateur){
@@ -20,6 +20,7 @@ public class FenetrePrincipal extends JFrame{
 		setSize(1400,1000);
 		setLocationRelativeTo(null);
 		setVisible(true);
+		setBackground(new Color(139,108,66));
 		
 		panCollection = new JPanel();
 		panLivre = new JPanel();
@@ -50,6 +51,8 @@ public class FenetrePrincipal extends JFrame{
 		//Enlève l'onglet des préposés pour les utilisateurs
 		if(strTypeUtilsateur == "utilisateur"){onglet.remove(tabPanneau.length-2);}
 		
+		//Brun	onglet.setBackground(new Color(145,43,18));
+		onglet.setBackground(new Color(250, 240, 197));
 		add(onglet);
 			
 		if(strTypeUtilsateur == "préposé"){
