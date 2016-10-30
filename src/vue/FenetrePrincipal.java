@@ -20,7 +20,14 @@ public class FenetrePrincipal extends JFrame{
 		setLocationRelativeTo(null);
 		setVisible(true);
 		
-		getContentPane().add(new JLabel(new ImageIcon("bois planche.jpg")),BorderLayout.NORTH);
+		panCollection = new JPanel();
+		panLivre = new JPanel();
+		panPériodique = new JPanel();
+		panDVD = new JPanel();
+		panGestion = new JPanel();
+		panInfoLogiciel = new JPanel();
+		
+		add(new JLabel(new ImageIcon("bois planche.jpg")),BorderLayout.NORTH);
 		
 		if(strTypeUtilsateur == "préposé"){
 			Preprose();
@@ -37,7 +44,7 @@ public class FenetrePrincipal extends JFrame{
 		
 		
 		
-			
+
 		setResizable(false);
 	}
 	
@@ -45,11 +52,25 @@ public class FenetrePrincipal extends JFrame{
 		JPanel[] tabPanneau = { panCollection,panLivre,panPériodique,panDVD,panGestion,panInfoLogiciel};
 		String[] tabNomOnglet ={"Collection","Livre","Périodique","DVD","Gestion","Info Logiciel"};
 		
+		JLabel obJLabel = new JLabel("test");
+		
+		obJLabel.setFont(new Font("serif", Font.BOLD, 24 ));
+		
+		panDVD.add(obJLabel);
+		
+		
+		
 		for(int q=0;q<tabPanneau.length;q++){
 			onglet.add(tabNomOnglet[q], tabPanneau[q]);
 		}
 		
-		getContentPane().add(onglet);
+		add(onglet);
+		
+		
+		
+		
+		
+
 	}
 	
 	private void Utilisateur(){
@@ -58,6 +79,5 @@ public class FenetrePrincipal extends JFrame{
 	
 	public void paintComponent(Graphics g){
 		super.paintComponents(g);
-		
 	}
 }
