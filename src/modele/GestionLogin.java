@@ -14,8 +14,7 @@ public class GestionLogin implements ActionListener, MouseListener{
 	private JButton JBconnex;
 	private JCheckBox JCBsouv;
 	String nomSauvegarde = "";
-	private char[] e = {'p','a','s','s','w','o','r','d'}, e1 ={};
-
+	
 	public GestionLogin(JTextField JTFnum,JPasswordField JPFpasse, JButton JBconnex,JCheckBox JCBsouv){
 		this.JTFnum = JTFnum;
 		this.JPFpasse = JPFpasse;
@@ -54,7 +53,11 @@ public class GestionLogin implements ActionListener, MouseListener{
 	public void mouseClicked(MouseEvent arg0) {
 		gestionlogin(arg0);
 	}
-
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		gestionlogin(arg0);
+	}
+	
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 	}
@@ -67,10 +70,6 @@ public class GestionLogin implements ActionListener, MouseListener{
 	public void mousePressed(MouseEvent arg0) {
 	}
 
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		gestionlogin(arg0);
-	}
 	
 	
 	

@@ -55,7 +55,7 @@ public class FenetrePrincipal extends JFrame{
 		//Brun	onglet.setBackground(new Color(145,43,18));
 		onglet.setBackground(new Color(250, 240, 197));
 		add(onglet);
-			
+		
 		if(strTypeUtilsateur == "préposé"){
 			Preprose();
 		}
