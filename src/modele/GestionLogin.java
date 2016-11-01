@@ -57,7 +57,6 @@ public class GestionLogin implements ActionListener, MouseListener{
 	public void mouseReleased(MouseEvent arg0) {
 		gestionlogin(arg0);
 	}
-	
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 	}
@@ -68,6 +67,7 @@ public class GestionLogin implements ActionListener, MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
+		gestionlogin(arg0);
 	}
 
 	
