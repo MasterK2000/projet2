@@ -20,32 +20,35 @@ public class LectureFichier {
 				brFichierDVD = new BufferedReader(new FileReader("DVD.txt"));
 				brFichierLivre = new BufferedReader(new FileReader("Livres.txt"));
 				brFichierPerio = new BufferedReader(new FileReader("Periodiques.txt"));
+				
 			} catch (FileNotFoundException f) {
-				System.out.println("");
+				System.out.println("Un fichier est manquant");
 			}
 		} 
 		catch (FileNotFoundException e) {	
 			System.out.println("Premier démarrage");
 			
 			//lecture a faire
-		}
-		String strLigne;
-		StringTokenizer st;
-		Station station;
-		try {		
-			while ((strLigne = brFichier.readLine())!= null){
-				st = new StringTokenizer(strLigne, ",");
-				while (st.hasMoreTokens()) {	   
-					station = new Station(st.nextToken(), st.nextToken(),Short.parseShort(st.nextToken().trim()));
-				
-					tabStation[intNbStations]= station;
-					intNbStations++;
-				}	    
-			}   
-		} 
-		catch (Exception e) {
+			
+			String strLigne;
+			StringTokenizer st;
+			Station station;
+			try {		
+				while ((strLigne = brFichier.readLine())!= null){
+					st = new StringTokenizer(strLigne, ",");
+					while (st.hasMoreTokens()) {	   
+						station = new Station(st.nextToken(), st.nextToken(),Short.parseShort(st.nextToken().trim()));
+					
+						tabStation[intNbStations]= station;
+						intNbStations++;
+					}	    
+				}   
+			} 
+			catch (Exception e) {
 
+			}
 		}
+		
 	
 	}
 	*/
