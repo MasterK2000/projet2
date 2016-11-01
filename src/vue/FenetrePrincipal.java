@@ -4,15 +4,15 @@ import java.awt.*;
 import javax.swing.*;
 
 public class FenetrePrincipal extends JFrame{
-	private JPanel panCollection,panLivre,panPériodique,panDVD,panGestion,panInfoLogiciel = new JPanel();
+	private JPanel panCollection,panLivre,panPériodique,panDVD,panGestion,panInfoLogiciel,panAdministrateur = new JPanel();
 	private JTabbedPane onglet = new JTabbedPane();
 	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		FenetrePrincipal fp = new FenetrePrincipal("préposé");
+		//FenetrePrincipal fp = new FenetrePrincipal("préposé");
 		//FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
-		//nbghjgfdftgydyrtd
+		FenetrePrincipal fp = new FenetrePrincipal("administrateur");
 	}
 	
 	public FenetrePrincipal(String strTypeUtilsateur){
@@ -31,8 +31,8 @@ public class FenetrePrincipal extends JFrame{
 		panInfoLogiciel = new JPanel();
 		
 		//Tableau pour panneau d'onglet
-		JPanel[] tabPanneau = { panCollection,panLivre,panPériodique,panDVD,panGestion,panInfoLogiciel};
-		String[] tabNomOnglet ={"Collection","Livre","Périodique","DVD","Gestion","Info Logiciel"};
+		JPanel[] tabPanneau = { panCollection,panLivre,panPériodique,panDVD,panGestion,panInfoLogiciel,panAdministrateur};
+		String[] tabNomOnglet ={"Collection","Livre","Périodique","DVD","Gestion","Info Logiciel","Administrateur"};
 		
 		
 		//En-Tête
@@ -50,7 +50,10 @@ public class FenetrePrincipal extends JFrame{
 		}
 		
 		//Enlève l'onglet des préposés pour les utilisateurs
-		if(strTypeUtilsateur == "utilisateur"){onglet.remove(tabPanneau.length-2);}
+		if(strTypeUtilsateur == "utilisateur"){onglet.remove(tabPanneau.length-3);}
+		
+		//Enlève l'onglet des administrateurs pour préposé et utilisateur
+		if(strTypeUtilsateur != "administrateur"){onglet.remove(tabPanneau.length-1);}
 		
 		//Brun	onglet.setBackground(new Color(145,43,18));
 		onglet.setBackground(new Color(250, 240, 197));
