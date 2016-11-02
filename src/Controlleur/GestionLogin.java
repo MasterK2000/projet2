@@ -1,11 +1,8 @@
-package modele;
+package Controlleur;
 
 import java.awt.Color;
 import java.awt.event.*;
-
 import javax.swing.*;
-
-import vue.identification;
 
 public class GestionLogin implements ActionListener, MouseListener{
 

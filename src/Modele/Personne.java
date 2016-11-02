@@ -1,4 +1,4 @@
-package controlleur;
+package Modele;
 
 public class Personne {
 

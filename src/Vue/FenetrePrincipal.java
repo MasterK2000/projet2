@@ -1,4 +1,4 @@
-package vue;
+package Vue;
 
 import java.awt.*;
 import javax.swing.*;
@@ -36,7 +36,7 @@ public class FenetrePrincipal extends JFrame{
 		
 		
 		//En-Tête
-		add(new JLabel(new ImageIcon("bois planche.jpg")),BorderLayout.NORTH);
+		add(new JLabel(new ImageIcon("Fichiers/bois planche.jpg")),BorderLayout.NORTH);
 		
 		//test
 		JLabel obJLabel = new JLabel("test");

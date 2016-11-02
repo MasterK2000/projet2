@@ -1,2 +1,0 @@
-Admin,1,1234,shan,yao,addresse bizzare,(514) 286-2773
-Admin,2,qwerty,doyon,philippe,Saint-Eustache,(438) 395-1234

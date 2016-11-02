@@ -1,4 +1,4 @@
-package controlleur;
+package Modele;
 
 
 import java.util.Date;

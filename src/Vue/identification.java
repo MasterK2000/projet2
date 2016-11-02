@@ -1,9 +1,9 @@
-package vue;
+package Vue;
 
 import java.awt.*;
 import javax.swing.*;
 
-import modele.GestionLogin;
+import Controlleur.GestionLogin;
 
 public final class identification extends JFrame{
 	
@@ -33,8 +33,8 @@ public final class identification extends JFrame{
 		setLayout(new BorderLayout());
 		panel = new JPanel();
 		panel.setLayout(new GridBagLayout());
-		JLBnum.setIcon(new ImageIcon("usericon.png"));
-		JLBmdpasse.setIcon(new ImageIcon("password-icon.png"));
+		JLBnum.setIcon(new ImageIcon("Fichiers/usericon.png"));
+		JLBmdpasse.setIcon(new ImageIcon("Fichiers/password-icon.png"));
 		
 		JPFmotpasse.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
 		JTFnumInscription.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
