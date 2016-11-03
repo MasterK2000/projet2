@@ -9,43 +9,55 @@ public class LectureFichier {
 	private BufferedReader brFichierLivre;
 	private BufferedReader brFichierPerio;
 	private BufferedReader brFichier;
+	private BufferedReader brFichierSer;
 	
 	/*
 	public LectureFichier(String strNomFichier){
 		try {
-			brFichier = new BufferedReader(new FileReader(strNomFichier));
+			
+			brFichierSer = new BufferedReader(new FileReader("Fichiers/Donne.ser"));
 			
 			
-			try {
-				brFichierDVD = new BufferedReader(new FileReader("DVD.txt"));
-				brFichierLivre = new BufferedReader(new FileReader("Livres.txt"));
-				brFichierPerio = new BufferedReader(new FileReader("Periodiques.txt"));
-				
-			} catch (FileNotFoundException f) {
-				System.out.println("Un fichier est manquant");
-			}
 		} 
 		catch (FileNotFoundException e) {	
 			System.out.println("Premier démarrage");
 			
+			try {
+				//brFichier = new BufferedReader(new FileReader(strNomFichier));
+				brFichierDVD = new BufferedReader(new FileReader("DVD.txt"));
+				//brFichierLivre = new BufferedReader(new FileReader("Fichiers/Livres.txt"));
+				//brFichierPerio = new BufferedReader(new FileReader("Fichiers/Periodiques.txt"));
+				
+			} catch (FileNotFoundException f) {
+				System.out.println("Un fichier est manquant");
+			}
 			//lecture a faire
 			
 			String strLigne;
 			StringTokenizer st;
-			Station station;
+			DVD objDVD;
+			//valeur de remplisage, ne pas oublier de lui donner sa vrai valeur
+			Boolean booVide = false;
 			try {		
+				System.out.println("klhuigui");
+				strLigne = brFichierDVD.readLine();
+				System.out.println(strLigne +"vhjfcj");
 				while ((strLigne = brFichier.readLine())!= null){
+					System.out.println("4354354");
 					st = new StringTokenizer(strLigne, ",");
 					while (st.hasMoreTokens()) {	   
-						station = new Station(st.nextToken(), st.nextToken(),Short.parseShort(st.nextToken().trim()));
+						System.out.println("dfdfdfklhuigui");
+						System.out.println(strLigne + "vgftftyfty");
+						objDVD = new DVD(st.nextToken(), st.nextToken(),st.nextToken(),
+								Integer.parseInt(st.nextToken().trim()),st.nextToken(),booVide.booleanValue());
 					
-						tabStation[intNbStations]= station;
-						intNbStations++;
+						//tabStation[intNbStations]= station;
+						//intNbStations++;
 					}	    
 				}   
 			} 
-			catch (Exception e) {
-
+			catch (Exception f) {
+				System.out.println(f.toString());
 			}
 		}
 		

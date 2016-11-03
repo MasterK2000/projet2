@@ -3,6 +3,8 @@ package Vue;
 import java.awt.*;
 import javax.swing.*;
 
+import Modele.LectureFichier;
+
 public class FenetrePrincipal extends JFrame{
 	private JPanel panCollection,panLivre,panPériodique,panDVD,panGestion,panInfoLogiciel,panAdministrateur = new JPanel();
 	private JTabbedPane onglet = new JTabbedPane();
@@ -12,7 +14,8 @@ public class FenetrePrincipal extends JFrame{
 		// TODO Auto-generated method stub
 		//FenetrePrincipal fp = new FenetrePrincipal("préposé");
 		//FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
-		//FenetrePrincipal fp = new FenetrePrincipal("administrateur");
+		FenetrePrincipal fp = new FenetrePrincipal("administrateur");
+		LectureFichier objLecture = new LectureFichier("Fichiers/DVD.txt");
 	}
 	
 	public FenetrePrincipal(String strTypeUtilsateur){
@@ -53,7 +56,7 @@ public class FenetrePrincipal extends JFrame{
 		if(strTypeUtilsateur == "utilisateur"){onglet.remove(tabPanneau.length-3);}
 		
 		//Enlève l'onglet des administrateurs pour préposé et utilisateur
-		if(strTypeUtilsateur != "Administrateur"){onglet.remove(tabPanneau.length-1);}
+		if(strTypeUtilsateur != "administrateur"){onglet.remove(tabPanneau.length-2);}
 		
 		//Brun	onglet.setBackground(new Color(145,43,18));
 		onglet.setBackground(new Color(250, 240, 197));
