@@ -1,13 +1,7 @@
 package Modele;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
-
-import sun.security.util.Password;
 
 public class ListeUtilisateurs {
 
@@ -37,7 +31,7 @@ public class ListeUtilisateurs {
 				strLigne = brFichierAdherent.readLine();
 				while (strLigne != null) {
 					String[] s = strLigne.split(",");
-					objetAdherent = new Adherent(Integer.parseInt(s[0]),s[1],s[2],s[3],s[4]);
+					objetAdherent = new Adherent(Integer.parseInt(s[0]),s[1],s[2],s[3],s[4],s[5]);
 					ArrayUtilisateurs.add(objetAdherent);
 					strLigne = brFichierAdherent.readLine();
 				}
@@ -66,7 +60,7 @@ public class ListeUtilisateurs {
 			}
 		}
 		else{
-			
+			//serialiser
 		}
 	}
 

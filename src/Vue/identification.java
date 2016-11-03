@@ -7,7 +7,6 @@ import Controlleur.GestionLogin;
 
 public final class identification extends JFrame{
 	
-	private static identification instance;
 	JTextField JTFnumInscription;
 	JPasswordField JPFmotpasse;
 	JLabel JLBnum,JLBmdpasse,JLBsouvenir;
@@ -18,7 +17,7 @@ public final class identification extends JFrame{
 	
 	
 	
-	private identification(){
+	public identification(){
 		
 		super("Authentification");
 		
@@ -27,7 +26,7 @@ public final class identification extends JFrame{
 		JLBmdpasse = new JLabel("");
 		JLBsouvenir = new JLabel(" se souvenir de moi?");
 		JTFnumInscription = new JTextField("Nom d'utilisateur");
-		JPFmotpasse = new JPasswordField("Mot de passe");
+		JPFmotpasse = new JPasswordField("password");
 		connex = new JButton("Connexion");
 		JCBsouvenir = new JCheckBox();
 		setLayout(new BorderLayout());
@@ -35,6 +34,7 @@ public final class identification extends JFrame{
 		panel.setLayout(new GridBagLayout());
 		JLBnum.setIcon(new ImageIcon("Fichiers/usericon.png"));
 		JLBmdpasse.setIcon(new ImageIcon("Fichiers/password-icon.png"));
+		
 		
 		JPFmotpasse.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
 		JTFnumInscription.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
@@ -90,31 +90,21 @@ public final class identification extends JFrame{
 		panel.add(connex,gbl);
 		
 		GestionLogin g = new GestionLogin(JTFnumInscription, JPFmotpasse, connex, JCBsouvenir);
-		JTFnumInscription.addMouseListener(g);
-		JPFmotpasse.addMouseListener(g);
+		if(!GestionLogin.nomSauvegarde.equals("")) JTFnumInscription.setText(GestionLogin.nomSauvegarde);
+		JTFnumInscription.addFocusListener(g);
+		JPFmotpasse.addFocusListener(g);
 		connex.addActionListener(g);
 		JCBsouvenir.addActionListener(g);
-		
 		add(panel,BorderLayout.CENTER);
 		JTFnumInscription.setColumns(14);
 		JPFmotpasse.setColumns(14);
+		this.pack();
+		connex.requestFocusInWindow();
+		
 		setSize(290,190);
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setResizable(false);
 	}
 	
-	
-	public static void main(String[] args) {
-		identification identi = identification.getInstance();
-		identi.setDefaultCloseOperation(EXIT_ON_CLOSE);
-	}
-
-
-	public static identification getInstance() {
-		if(instance == null)
-			instance = new identification();
-		return instance;
-	}
-
 }

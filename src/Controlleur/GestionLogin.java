@@ -4,14 +4,15 @@ import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class GestionLogin implements ActionListener, MouseListener{
+public class GestionLogin implements ActionListener, FocusListener{
 
 	private JTextField JTFnum;
 	private JPasswordField JPFpasse;
 	private JButton JBconnex;
 	private JCheckBox JCBsouv;
-	String nomSauvegarde = "";
-	
+	public static String nomSauvegarde = "";
+
+
 	public GestionLogin(JTextField JTFnum,JPasswordField JPFpasse, JButton JBconnex,JCheckBox JCBsouv){
 		this.JTFnum = JTFnum;
 		this.JPFpasse = JPFpasse;
@@ -25,19 +26,20 @@ public class GestionLogin implements ActionListener, MouseListener{
 		Object o = arg0.getSource();
 
 		if(o == JBconnex){
-			/*
-			Verifier le nom d'utilisateur et mot de passe
-			Est-il un utilisateur ou admin
-			*/
-			
-			if(JCBsouv.isSelected()){
-				nomSauvegarde = JTFnum.getText();
+			Communicateur comm = Communicateur.getInstance();
+			if(!comm.validerConnexion(JTFnum.getText().trim(), String.valueOf(JPFpasse.getPassword()))){
+				JOptionPane.showMessageDialog(null,"Nom d'utilisateur ou mot de passe non valide(s)");
+				JPFpasse.setText("password");JPFpasse.setForeground(Color.lightGray);
+			}
+			else{
+				if(JCBsouv.isSelected())
+					nomSauvegarde = JTFnum.getText();
 			}
 		}
 
 		if(String.valueOf(JPFpasse.getPassword()).equals("")){
 			JPFpasse.setText("password");
-			JPFpasse.setForeground(Color.lightGray);
+
 		}
 		if(JTFnum.getText().equals("")){
 			JTFnum.setText("Nom d'utilisateur");
@@ -45,33 +47,7 @@ public class GestionLogin implements ActionListener, MouseListener{
 		}
 	}
 
-
-	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		gestionlogin(arg0);
-	}
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		gestionlogin(arg0);
-	}
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		gestionlogin(arg0);
-	}
-
-	
-	
-	
-	
-	public void gestionlogin(MouseEvent arg0){
+	public void gestionlogin(FocusEvent arg0){
 		Object o = arg0.getSource();
 
 		if(o == JTFnum && (JTFnum.getText().equals("Nom d'utilisateur") || JTFnum.getText().equals(""))){
@@ -79,10 +55,10 @@ public class GestionLogin implements ActionListener, MouseListener{
 			JTFnum.setForeground(Color.black);
 		}
 		if(o != JPFpasse && String.valueOf(JPFpasse.getPassword()).equals("")){
-			JPFpasse.setText("Mot de passe");
+			JPFpasse.setText("password");
 			JPFpasse.setForeground(Color.lightGray);
 		}
-		if(o == JPFpasse && (JPFpasse.getPassword().equals("") || String.valueOf(JPFpasse.getPassword()).equals("Mot de passe"))){
+		if(o == JPFpasse && (JPFpasse.getPassword().equals("") || String.valueOf(JPFpasse.getPassword()).equals("password"))){
 			JPFpasse.setText("");
 			JPFpasse.setForeground(Color.black);
 		}
@@ -90,6 +66,16 @@ public class GestionLogin implements ActionListener, MouseListener{
 			JTFnum.setText("Nom d'utilisateur");
 			JTFnum.setForeground(Color.lightGray);
 		}
+	}
+
+
+	@Override
+	public void focusGained(FocusEvent arg0) {
+		gestionlogin(arg0);
+	}
+	@Override
+	public void focusLost(FocusEvent arg0) {
+
 	}
 
 }

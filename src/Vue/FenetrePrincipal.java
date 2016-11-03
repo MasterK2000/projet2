@@ -12,7 +12,7 @@ public class FenetrePrincipal extends JFrame{
 		// TODO Auto-generated method stub
 		//FenetrePrincipal fp = new FenetrePrincipal("préposé");
 		//FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
-		FenetrePrincipal fp = new FenetrePrincipal("administrateur");
+		//FenetrePrincipal fp = new FenetrePrincipal("administrateur");
 	}
 	
 	public FenetrePrincipal(String strTypeUtilsateur){
@@ -53,16 +53,16 @@ public class FenetrePrincipal extends JFrame{
 		if(strTypeUtilsateur == "utilisateur"){onglet.remove(tabPanneau.length-3);}
 		
 		//Enlève l'onglet des administrateurs pour préposé et utilisateur
-		if(strTypeUtilsateur != "administrateur"){onglet.remove(tabPanneau.length-1);}
+		if(strTypeUtilsateur != "Administrateur"){onglet.remove(tabPanneau.length-1);}
 		
 		//Brun	onglet.setBackground(new Color(145,43,18));
 		onglet.setBackground(new Color(250, 240, 197));
 		add(onglet);
 		
-		if(strTypeUtilsateur == "préposé"){
-			Preprose();
+		if(strTypeUtilsateur == "Préposé"){
+			Prepose();
 		}
-		else if(strTypeUtilsateur == "utilisateur"){
+		else if(strTypeUtilsateur == "Adherent"){
 			Utilisateur();
 		}
 		else{
@@ -73,7 +73,7 @@ public class FenetrePrincipal extends JFrame{
 		setResizable(false);
 	}
 	
-	private void Preprose(){
+	private void Prepose(){
 	
 
 	}
