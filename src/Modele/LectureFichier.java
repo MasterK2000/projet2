@@ -9,6 +9,7 @@ public class LectureFichier {
 	
 	
 	public LectureFichier(String strNomFichier){
+		//
 		try {
 			brFichierSer = new BufferedReader(new FileReader("Fichiers/Donnee.ser"));
 		} 
@@ -33,6 +34,7 @@ public class LectureFichier {
 					st = new StringTokenizer(strLigne, ",");
 					while (st.hasMoreTokens()) {	   
 						System.out.println(strLigne);
+						//if()
 						objDocument = new DVD(st.nextToken(), st.nextToken(),st.nextToken(),
 								Integer.parseInt(st.nextToken().trim()),st.nextToken(),booVide.booleanValue());
 					}	    
