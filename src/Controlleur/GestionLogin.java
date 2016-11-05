@@ -39,7 +39,7 @@ public class GestionLogin implements ActionListener, FocusListener{
 
 		if(String.valueOf(JPFpasse.getPassword()).equals("")){
 			JPFpasse.setText("password");
-
+			JPFpasse.setForeground(Color.lightGray);
 		}
 		if(JTFnum.getText().equals("")){
 			JTFnum.setText("Nom d'utilisateur");

@@ -22,8 +22,10 @@ public final class identification extends JFrame{
 		super("Authentification");
 		
 		
-		JLBnum = new JLabel("");
-		JLBmdpasse = new JLabel("");
+		JLBnum = new JLabel();
+		JLBnum.setIcon(new ImageIcon("Fichiers/usericon.png"));
+		JLBmdpasse = new JLabel();
+		JLBmdpasse.setIcon(new ImageIcon("Fichiers/password-icon.png"));
 		JLBsouvenir = new JLabel(" se souvenir de moi?");
 		JTFnumInscription = new JTextField("Nom d'utilisateur");
 		JPFmotpasse = new JPasswordField("password");
@@ -32,18 +34,15 @@ public final class identification extends JFrame{
 		setLayout(new BorderLayout());
 		panel = new JPanel();
 		panel.setLayout(new GridBagLayout());
-		JLBnum.setIcon(new ImageIcon("Fichiers/usericon.png"));
-		JLBmdpasse.setIcon(new ImageIcon("Fichiers/password-icon.png"));
 		
 		
-		JPFmotpasse.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
 		JTFnumInscription.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
-		
 		JTFnumInscription.setFont(new Font("Arial",Font.PLAIN,15));
-		JPFmotpasse.setFont(new Font("Arial",Font.PLAIN,15));
-		JLBsouvenir.setFont(new Font("Arial",Font.PLAIN,15));
 		JTFnumInscription.setForeground(Color.lightGray);
+		JPFmotpasse.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
+		JPFmotpasse.setFont(new Font("Arial",Font.PLAIN,15));
 		JPFmotpasse.setForeground(Color.lightGray);
+		JLBsouvenir.setFont(new Font("Arial",Font.PLAIN,15));
 		
 		gbl.gridx = 0;
 		gbl.gridy = 0;
@@ -101,7 +100,7 @@ public final class identification extends JFrame{
 		this.pack();
 		connex.requestFocusInWindow();
 		
-		setSize(290,190);
+		setSize(300,200);
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setResizable(false);
