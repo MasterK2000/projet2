@@ -9,18 +9,23 @@ import Controlleur.GestionLogin;
 public class Communicateur {
 
 	ArrayList<Personne> ArrayUtilisateurs;
+	ArrayList<Document> ArrayDocuments;
 	private static Communicateur instance;
-	private static ListeUtilisateurs listestUtilisateurs;
 	private static identification iden;
 	private static Communicateur comm;
 	private static ListeUtilisateurs lstUtilisateurs;
-	private static FenetrePrincipal fPrincipal = null;
+	private static LectureFichier lstDocuments;
+	private static FenetrePrincipal fPrincipal;
 	
 	private Communicateur(){
 		iden = new identification();
 		lstUtilisateurs = new ListeUtilisateurs();
+		lstDocuments = new LectureFichier();
 		ArrayUtilisateurs = lstUtilisateurs.getArrayUtilisateurs();
+		ArrayDocuments = lstDocuments.getArrayDocuments();
 	}
+	
+	
 	public boolean validerConnexion(String username,String motpasse){
 		boolean valide = false;
 		for (int i = 0; i < ArrayUtilisateurs.size(); i++) {
@@ -37,6 +42,8 @@ public class Communicateur {
 		}
 		return valide;
 	}
+	
+	
 	public static Communicateur getInstance() {
 		if(instance == null)
 			instance = new Communicateur();

@@ -15,7 +15,7 @@ public class FenetrePrincipal extends JFrame{
 		//FenetrePrincipal fp = new FenetrePrincipal("préposé");
 		//FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
 		FenetrePrincipal fp = new FenetrePrincipal("administrateur");
-		LectureFichier objLecture = new LectureFichier("Fichiers/Livres.txt");
+		//LectureFichier objLecture = new LectureFichier("Fichiers/Livres.txt");
 	}
 	
 	public FenetrePrincipal(String strTypeUtilsateur){

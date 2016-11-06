@@ -60,7 +60,7 @@ public class ListeUtilisateurs {
 			}
 		}
 		else{
-			//serialiser
+			//deserialiser
 		}
 	}
 
