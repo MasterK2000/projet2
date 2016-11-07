@@ -19,6 +19,38 @@ public class Document {
 	public void modifier(){
 		
 	}
+	public String getNoDoc() {
+		return noDoc;
+	}
+
+	public void setNoDoc(String noDoc) {
+		this.noDoc = noDoc;
+	}
+
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+	public String getDateparution() {
+		return dateparution;
+	}
+
+	public void setDateparution(String dateparution) {
+		this.dateparution = dateparution;
+	}
+
+	public boolean getEtat() {
+		return etat;
+	}
+
+	public void setEtat(boolean etat) {
+		this.etat = etat;
+	}
+
 	public void lister(){
 		
 	}

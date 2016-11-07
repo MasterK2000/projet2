@@ -68,7 +68,7 @@ public class LectureFichier {
 				strLigne = brFichierLivre.readLine();
 				while (strLigne != null) {
 					String[] s = strLigne.split(",");
-					objectLivre = new livre(s[0],s[1],s[2],s[3],false);
+					objectLivre = new livre(s[0],s[1],s[2],s[3],true);
 					ArrayDocuments.add(objectLivre);
 					strLigne = brFichierLivre.readLine();
 				}
@@ -76,7 +76,7 @@ public class LectureFichier {
 				strLigne = brFichierPeriodique.readLine();
 				while (strLigne != null){
 					String[] s = strLigne.split(",");
-					objectPeriodique = new Periodique(s[0],s[1],s[2],Integer.parseInt(s[3].trim()),Integer.parseInt(s[4].trim()),false);
+					objectPeriodique = new Periodique(s[0],s[1],s[2],Integer.parseInt(s[3].trim()),Integer.parseInt(s[4].trim()),true);
 					ArrayDocuments.add(objectPeriodique);
 					strLigne = brFichierPeriodique.readLine();
 				}
@@ -84,7 +84,7 @@ public class LectureFichier {
 				strLigne = brFichierDVD.readLine();
 				while (strLigne != null){
 					String[] s = strLigne.split(",");
-					objectDVD = new DVD(s[0],s[1],s[2],Integer.parseInt(s[3]),s[4],false);
+					objectDVD = new DVD(s[0],s[1],s[2],Integer.parseInt(s[3].trim()),s[4],true);
 					ArrayDocuments.add(objectDVD);
 					strLigne = brFichierDVD.readLine();
 				}

@@ -1,6 +1,9 @@
 package Controlleur;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import javax.swing.JTable;
 
 import Modele.*;
 import Vue.*;
@@ -10,6 +13,9 @@ public class Communicateur {
 
 	ArrayList<Personne> ArrayUtilisateurs;
 	ArrayList<Document> ArrayDocuments;
+	
+
+
 	private static Communicateur instance;
 	private static identification iden;
 	private static Communicateur comm;
@@ -43,17 +49,46 @@ public class Communicateur {
 		return valide;
 	}
 	
+	public JTable creerJTBLivre(){
+		String[] colonnes = {"Numero document","Titre","Date parution","Auteur","Disponibilite"};
+		String[][] donnees = new String[15][6];
+		
+		for (int i = 0,p=0; i < ArrayDocuments.size(); i++) {
+			if(ArrayDocuments.get(i).getClass() == livre.class){
+			livre lv = ((livre)ArrayDocuments.get(i));
+			donnees[p] = lv.getJTBligne(lv);
+			p++;
+			}
+		}
+		return new JTable(donnees,colonnes);
+	}
 	
 	public static Communicateur getInstance() {
 		if(instance == null)
 			instance = new Communicateur();
 		return instance;
 	}
-	
-	
+	public ArrayList<Personne> getArrayUtilisateurs() {
+		return ArrayUtilisateurs;
+	}
+
+
+	public void setArrayUtilisateurs(ArrayList<Personne> arrayUtilisateurs) {
+		ArrayUtilisateurs = arrayUtilisateurs;
+	}
+
+
+	public ArrayList<Document> getArrayDocuments() {
+		return ArrayDocuments;
+	}
+
+
+	public void setArrayDocuments(ArrayList<Document> arrayDocuments) {
+		ArrayDocuments = arrayDocuments;
+	}
+
 	
 	public static void main(String[] args) {
-		
 		Communicateur.getInstance();
 	}
 
