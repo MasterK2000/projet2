@@ -8,7 +8,7 @@ public class LectureFichier {
 	private BufferedReader brFichierSer;
 	ArrayList<Document> ArrayDocuments;
 	
-	public LectureFichier(){
+	public LectureFichier() throws IOException{
 		/*
 		try {
 			brFichierSer = new BufferedReader(new FileReader("Fichiers/Donnee.ser"));
@@ -98,12 +98,42 @@ public class LectureFichier {
 		}
 		else{
 			//deserialiser
-		}
+			boolean fin = false; 
+			  
+			FileInputStream fichier = new FileInputStream("Fichiers/ListeDocuments.ser"); 
+			    
+			ObjectInputStream is = new ObjectInputStream(fichier); 
+			Document objDocument;
+			
+			try {	  
+				while((objDocument = (Document) is.readObject())!=null){
+					if(objDocument instanceof livre){
+						livre objLivre = (livre) is.readObject();
+						ArrayDocuments.add(objLivre);
+					}
+					else if(objDocument instanceof DVD){
+						DVD objDVD = (DVD) is.readObject();
+						ArrayDocuments.add(objDVD);
+					}
+					else{
+						Periodique objPeriodique = (Periodique) is.readObject();
+						ArrayDocuments.add(objPeriodique);
+					}
+				}
+			}
+			catch (IOException e) { 
+				System.out.println("fin de fichier ou fichier introuvable");	    	   
+			} 
+		   
+			catch (ClassNotFoundException e) {   
+				e.printStackTrace(); 	   
+			} 
+		}	
 	}
 
 	public ArrayList<Document> getArrayDocuments() {
 		return ArrayDocuments;
 	}
-		
+	
 }
 
