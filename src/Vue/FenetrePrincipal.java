@@ -1,6 +1,8 @@
 package Vue;
 
 import java.awt.*;
+import java.io.IOException;
+
 import javax.swing.*;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -15,7 +17,7 @@ public class FenetrePrincipal extends JFrame{
 	TableModelLivres modeleLivre;
 	JTable tableLivre;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		//FenetrePrincipal fp = new FenetrePrincipal("préposé");
 		//FenetrePrincipal fp = new FenetrePrincipal("utilisateur");
@@ -23,7 +25,7 @@ public class FenetrePrincipal extends JFrame{
 		//LectureFichier objLecture = new LectureFichier("Fichiers/Livres.txt");
 	}
 
-	public FenetrePrincipal(String strTypeUtilsateur){
+	public FenetrePrincipal(String strTypeUtilsateur) throws IOException{
 		super("Médiathèque");
 		Communicateur communicateur = Communicateur.getInstance();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

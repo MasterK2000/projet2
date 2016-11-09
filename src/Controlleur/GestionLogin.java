@@ -1,7 +1,10 @@
 package Controlleur;
 
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.awt.event.*;
+import java.io.IOException;
+
 import javax.swing.*;
 
 public class GestionLogin implements ActionListener, FocusListener{
@@ -26,14 +29,28 @@ public class GestionLogin implements ActionListener, FocusListener{
 		Object o = arg0.getSource();
 
 		if(o == JBconnex){
-			Communicateur comm = Communicateur.getInstance();
-			if(!comm.validerConnexion(JTFnum.getText().trim(), String.valueOf(JPFpasse.getPassword()))){
-				JOptionPane.showMessageDialog(null,"Nom d'utilisateur ou mot de passe non valide(s)");
-				JPFpasse.setText("password");JPFpasse.setForeground(Color.lightGray);
+			Communicateur comm = null;
+			try {
+				comm = Communicateur.getInstance();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			else{
-				if(JCBsouv.isSelected())
-					nomSauvegarde = JTFnum.getText();
+			try {
+				if(!comm.validerConnexion(JTFnum.getText().trim(), String.valueOf(JPFpasse.getPassword()))){
+					JOptionPane.showMessageDialog(null,"Nom d'utilisateur ou mot de passe non valide(s)");
+					JPFpasse.setText("password");JPFpasse.setForeground(Color.lightGray);
+				}
+				else{
+					if(JCBsouv.isSelected())
+						nomSauvegarde = JTFnum.getText();
+				}
+			} catch (HeadlessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 

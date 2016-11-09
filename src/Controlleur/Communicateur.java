@@ -1,5 +1,6 @@
 package Controlleur;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -23,7 +24,7 @@ public class Communicateur {
 	private static LectureFichier lstDocuments;
 	private static FenetrePrincipal fPrincipal;
 	
-	private Communicateur(){
+	private Communicateur() throws IOException{
 		iden = new identification();
 		lstUtilisateurs = new ListeUtilisateurs();
 		lstDocuments = new LectureFichier();
@@ -32,7 +33,7 @@ public class Communicateur {
 	}
 	
 	
-	public boolean validerConnexion(String username,String motpasse){
+	public boolean validerConnexion(String username,String motpasse) throws IOException{
 		boolean valide = false;
 		for (int i = 0; i < ArrayUtilisateurs.size(); i++) {
 			String usernameArray = (ArrayUtilisateurs.get(i).getPrenom()).substring(0,1) + "." + ArrayUtilisateurs.get(i).getNom();
@@ -63,7 +64,7 @@ public class Communicateur {
 		return new JTable(donnees,colonnes);
 	}
 	
-	public static Communicateur getInstance() {
+	public static Communicateur getInstance() throws IOException {
 		if(instance == null)
 			instance = new Communicateur();
 		return instance;
@@ -88,7 +89,7 @@ public class Communicateur {
 	}
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Communicateur.getInstance();
 	}
 
