@@ -4,12 +4,9 @@ import java.awt.*;
 import java.io.IOException;
 
 import javax.swing.*;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
+import javax.swing.table.*;
 
 import Controlleur.Communicateur;
-
-import Modele.LectureFichier;
 
 public class FenetrePrincipal extends JFrame{
 	private JPanel panCollection,panLivre,panPériodique,panDVD,panGestion,panInfoLogiciel,panAdministrateur = new JPanel();
@@ -62,9 +59,11 @@ public class FenetrePrincipal extends JFrame{
 		tableLivre.setPreferredScrollableViewportSize(new Dimension(800, 500));
 		tableLivre.setFillsViewportHeight(true);
 		tableLivre.setOpaque(true);
+		tableLivre.setBackground(new Color(250, 240, 197));		
+		
 		JScrollPane scrollPane = new JScrollPane(tableLivre);
 		panLivre.add(scrollPane);
-
+		
 		//Ajoute les onglets
 		for(int q=0;q<tabPanneau.length;q++){
 			onglet.add(tabNomOnglet[q], tabPanneau[q]);

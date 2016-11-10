@@ -13,6 +13,7 @@ public final class identification extends JFrame{
 	JPanel panel;
 	JButton connex;
 	JCheckBox JCBsouvenir;
+	JButton btnCatalogue;
 	GridBagConstraints gbl = new GridBagConstraints();
 	
 	
@@ -31,10 +32,12 @@ public final class identification extends JFrame{
 		JPFmotpasse = new JPasswordField("password");
 		connex = new JButton("Connexion");
 		JCBsouvenir = new JCheckBox();
+		btnCatalogue = new JButton("Catalogue");
 		setLayout(new BorderLayout());
 		panel = new JPanel();
 		panel.setLayout(new GridBagLayout());
 		
+		btnCatalogue.setToolTipText("Donne accès au document");
 		
 		JTFnumInscription.setBorder(BorderFactory.createEmptyBorder(0,3,0,0));
 		JTFnumInscription.setFont(new Font("Arial",Font.PLAIN,15));
@@ -76,16 +79,26 @@ public final class identification extends JFrame{
 		panel.add(JCBsouvenir, gbl);
 		
 		gbl.gridx = 1;
-		gbl.insets = new Insets(0,0,5,63);
+		gbl.insets = new Insets(0,0,5,50);
 		panel.add(JLBsouvenir,gbl);
+		
+		gbl.ipady=0;
+		gbl.gridx = 0;
+		gbl.gridy = 3;
+		gbl.ipady = 7;
+		gbl.gridwidth =1;
+		gbl.ipady = 2;
+		gbl.insets = new Insets(0,0,7,-70);
+		panel.add(btnCatalogue,gbl);
 		
 		gbl.ipady=0;
 		gbl.gridx = 1;
 		gbl.gridy = 3;
+		gbl.ipady = 7;
 		gbl.gridwidth =1;
-		gbl.ipady = 3;
+		gbl.ipady = 2;
 		gbl.anchor = GridBagConstraints.PAGE_END;
-		gbl.insets = new Insets(0,90,8,0);
+		gbl.insets = new Insets(0,0,7,-70);
 		panel.add(connex,gbl);
 		
 		GestionLogin g = new GestionLogin(JTFnumInscription, JPFmotpasse, connex, JCBsouvenir);
@@ -94,9 +107,10 @@ public final class identification extends JFrame{
 		JPFmotpasse.addFocusListener(g);
 		connex.addActionListener(g);
 		JCBsouvenir.addActionListener(g);
+		btnCatalogue.addActionListener(g);
 		add(panel,BorderLayout.CENTER);
-		JTFnumInscription.setColumns(14);
-		JPFmotpasse.setColumns(14);
+		JTFnumInscription.setColumns(13);
+		JPFmotpasse.setColumns(13);
 		this.pack();
 		connex.requestFocusInWindow();
 		
